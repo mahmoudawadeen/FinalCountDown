@@ -1,0 +1,142 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.eventizer.activities.StreamActivity" >
+    
+   <ListView
+       android:id="@+id/lst_events"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:layout_above="@+id/button3" >
+
+    </ListView>
+     
+    
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="NewsFeed" />
+
+    <Button
+        android:id="@+id/Button01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Profile"
+        android:onClick="goToProfile" />
+
+    <!-- TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/ImageButton02"
+        android:layout_marginTop="17dp"
+        android:text="Event Title"
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+        android:onClick="goToEvent"
+        />
+        -->
+
+    <!-- <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:text="Host name"
+        android:textAppearance="?android:attr/textAppearanceSmall" 
+        android:onClick="goToEvent"
+        />
+         -->
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignTop="@+id/textView1"
+        android:layout_toLeftOf="@+id/textView1"
+        android:src="@drawable/border_gray" />
+
+   <!--   <ImageButton
+        android:id="@+id/ImageButton01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_toLeftOf="@+id/imageView1"
+        android:background="@color/login_background"
+        android:src="@drawable/ic_launcher" 
+        android:onClick="goToEvent"
+        />
+        -->
+   
+
+    <ImageButton
+        android:id="@+id/ImageButton02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/button3"
+        android:background="@color/login_background"
+        android:onClick="createEvent"
+        android:src="@drawable/ic_launcher" />
+
+    <Button
+        android:id="@+id/create_button"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/Button01"
+        android:text="MyEvents"
+        android:onClick="goToAllEvents" />
+
+    <!-- <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ImageButton01"
+        android:layout_marginTop="33dp"
+        android:layout_toLeftOf="@+id/textView2"
+        android:src="@drawable/com_facebook_profile_default_icon" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_marginLeft="18dp"
+        android:text="You joined event x"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+ -->
+    <!-- <ImageView
+        android:id="@+id/ImageView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
+        android:layout_marginTop="28dp"
+        android:layout_toLeftOf="@+id/textView3"
+        android:src="@drawable/com_facebook_profile_default_icon" />
+         -->
+
+    <!-- <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ImageView01"
+        android:layout_alignLeft="@+id/textView3"
+        android:text="x posted on event y"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+ -->
+    
+    
+</RelativeLayout>

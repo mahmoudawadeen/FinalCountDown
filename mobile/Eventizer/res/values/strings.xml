@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Eventizer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="username">Username</string>
+    <string name="email">your.email@example.com</string>
+    <string name="password">password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="cancel">Cancel</string>
+    <string name="register">Register</string>
+    <string name="wrongCredentials">Invalid Username or Password</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="login">Login</string>
+    <string name="login_username">username: eventizer user</string>
+    <string name="title_activity_stream">StreamActivity</string>
+    <string name="title_activity_create_event">CreateEventActivity</string>
+    <string name="facebook_app_id">1532242903685661</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_edit_profile">EditProfileActivity</string>
+    <string name="save">Save</string>
+    <string name="title_activity_event_details">EventDetailsActivity</string>
+    <string name="title_activity_all_events">AllEventsActivity</string>
+    <string name="title_activity_event">EventActivity</string>
+    <string name="title_activity_edit_event_e">EditEventEActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_followers">Followers</string>
+    <string name="title_activity_followees">Followees</string>
+    <string name="title_activity_event_posts">EventPostsActivity</string>
+    <string name="title_activity_likes">LikesActivity</string>
+    <string name="title_activity_friend_profile">FriendProfileActivity</string>
+    <string name="title_activity_base">BaseActivity</string>
+
+</resources>

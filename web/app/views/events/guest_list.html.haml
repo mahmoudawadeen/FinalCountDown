@@ -1,0 +1,12 @@
+%table
+  %thead
+    %tr
+      %th guest
+      %th status
+
+  %tbody
+    - @guests.each do |entry|
+      %tr
+        %td= link_to entry.guests.username , entry.guests
+        %td
+          =entry.status

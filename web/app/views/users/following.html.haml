@@ -1,0 +1,9 @@
+%table
+  %thead
+    %tr
+      %th following
+
+  %tbody
+    - @following.each do |follow|
+      %tr
+        %td= link_to User.find_by_id(follow.followee_id).username , User.find_by_id(follow.followee_id)

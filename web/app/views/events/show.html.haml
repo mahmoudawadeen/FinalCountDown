@@ -1,0 +1,39 @@
+%p#notice= notice
+%p
+  Title
+  =@event.title
+%p
+  Start date
+  =@event.start_date
+%p
+  End date
+  =@event.end_date
+%p
+  Category
+  =@event.category
+%p
+  Location
+  =@event.location
+%p
+  Event Image
+  =image_tag @event.image_url
+%h3
+  =link_to 'View guest list' , guests_path(@event)
+  =@event.guest_lists.count
+%h1
+  Wall
+- @event.posts.each do |post|
+  %p
+    =link_to post.poster.username , post.poster
+    =post.content
+    =distance_of_time_in_words(post.created_at,Time.zone.now)
+    %p
+      -post.comments.each do |comment|
+        %p.some{ :style => 'padding-left:0.5cm;' }
+          =link_to comment.commenter.username , comment.commenter
+          =comment.content
+          =distance_of_time_in_words(comment.created_at,Time.zone.now)
+
+= link_to 'Edit', edit_event_path(@event)
+\|
+= link_to 'Back', events_path
