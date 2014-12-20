@@ -10,7 +10,7 @@
     tools:context="com.eventizer.activities.EditEventEActivity" >
    
     <EditText
-        android:id="@+id/endDate"
+        android:id="@+id/startDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/startDate"
@@ -19,7 +19,7 @@
         android:hint="Start date"/>
 		
     <EditText
-        android:id="@+id/startDate"
+        android:id="@+id/eventLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/endDate"
@@ -40,7 +40,7 @@
         android:hint="Event name" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/endDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/endDate"
@@ -51,7 +51,7 @@
         android:hint="End date" />
 		
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/username"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/eventName"
@@ -69,6 +69,6 @@
         android:layout_below="@+id/editText4"
         android:layout_marginTop="40dp"
         android:text="@string/save"
-        android:onClick="backToEvent" />
+        android:onClick="editEvent" />
 
 </RelativeLayout>

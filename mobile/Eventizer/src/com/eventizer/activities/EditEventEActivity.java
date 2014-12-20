@@ -1,5 +1,11 @@
 package com.eventizer.activities;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.eventizer.activities.base.BaseActivity;
+import com.eventizer.requests.PutRequest;
+import com.eventizer.util.ApiRouter;
 import com.example.eventizer.R;
 
 import android.app.Activity;
@@ -8,13 +14,31 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class EditEventEActivity extends Activity {
-
+public class EditEventEActivity extends BaseActivity {
+	private TextView eventTitle;
+	private TextView eventLocation;
+	private TextView eventStartDate;
+	private TextView eventEndDate;
+	JSONObject json = new JSONObject();
+	int eventId = this.getEvent().getId();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_event_e);
+		setupViews();
+		
+	}
+
+	private void setupViews() {
+		eventTitle = (EditText) findViewById(R.id.eventName);
+		eventLocation = (EditText) findViewById(R.id.eventLocation);
+		eventStartDate = (EditText) findViewById(R.id.startDate);
+		eventEndDate = (EditText) findViewById(R.id.endDate);
+		
 	}
 
 	@Override
@@ -23,10 +47,48 @@ public class EditEventEActivity extends Activity {
 		getMenuInflater().inflate(R.menu.edit_event_e, menu);
 		return true;
 	}
-	public void backToEvent(View view) {
-    	Intent intent = new Intent(this, EventActivity.class);
-    	startActivity(intent);
+	public void editEvent(View view) throws JSONException {
+		
+		if(!eventTitle.equals("") || eventTitle != null){
+			json.put("title", eventTitle.getText().toString());
+		}
+		
+		if(!eventStartDate.equals("") || eventStartDate != null){
+			json.put("start_date", eventStartDate.getText().toString());
+		}
+		
+		if(!eventEndDate.equals("") || eventEndDate != null){
+			json.put("end_date", eventEndDate.getText().toString());
+		}
+		
+		if(!eventLocation.equals("") || eventLocation != null){
+			json.put("location", eventLocation.getText().toString());
+		}
+		
+		PutRequest request = new PutRequest(ApiRouter.API_BASE_URL + "/events/"+ eventId) {
+			protected void onPutExecute(String response){
+				if (this.getStatusCode() == 20) {
+					Toast.makeText(getApplicationContext(),
+							"Event Edited Successfully",
+							Toast.LENGTH_LONG).show();
+					goToLogin(response);
+				}
+			}
+
+			
+		};
+		
+		request.setBody(json);
+		request.execute();
+		
+    	
     }
+	
+	private void goToLogin(String response) {
+		// TODO Auto-generated method stub
+		Intent intent = new Intent(this, StreamActivity.class);
+    	startActivity(intent);
+	}
 
 
 	@Override
