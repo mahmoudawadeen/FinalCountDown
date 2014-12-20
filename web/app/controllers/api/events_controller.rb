@@ -15,6 +15,15 @@ class Api::EventsController < Api::BaseController
     respond_with @event
 
   end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(event_params)
+
+    respond_with @event
+  end
+
+
   def posts
     arr = Array.new
     arr2 = Array.new
